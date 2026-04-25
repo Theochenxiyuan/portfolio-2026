@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Writing from '../components/Writing.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+    <Header />
+    <main>
+        <Hero />
+        <About />
+        <div class="max-w-page mx-auto px-6 py-12">
+            <hr class="border-gray-200">
+        </div>
+        <Writing />
+
+    </main>
+    <Footer />
+</Layout>

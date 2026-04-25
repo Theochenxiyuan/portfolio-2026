@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import { site } from '../data/site';
+
+const posts = await getCollection('case-study');
+const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const featuredPosts = sortedPosts.slice(0, 3);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const colors = [
+  { bg: 'bg-indigo-50', text: 'text-indigo-700' },
+  { bg: 'bg-pink-50', text: 'text-pink-700' },
+  { bg: 'bg-emerald-50', text: 'text-emerald-700' },
+  { bg: 'bg-orange-50', text: 'text-orange-700' },
+  { bg: 'bg-gray-100', text: 'text-gray-700' },
+  { bg: 'bg-amber-50', text: 'text-amber-700' },
+  { bg: 'bg-blue-50', text: 'text-blue-700' },
+  { bg: 'bg-violet-50', text: 'text-violet-700' },
+  { bg: 'bg-green-50', text: 'text-green-700' },
+  { bg: 'bg-sky-50', text: 'text-sky-700' },
+];
+
+function getColor(title: string) {
+  return colors[title.charCodeAt(0) % colors.length];
+}
+---
+
+<section id="writing" class="max-w-page mx-auto px-6 py-16">
+    <div class="max-w-2xl mb-16">
+        <h2 class="text-3xl font-semibold tracking-tight text-dark mb-6">{site.writing.title}</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">{site.writing.description}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredPosts.map((post) => {
+          const color = getColor(post.data.title);
+          return (
+            <a href={`/case-study/${post.slug}`} class="group block">
+                <div class="aspect-[3/4] bg-gradient-to-b from-transparent to-gray-100 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    {post.data.image ? (
+                        <img src={post.data.image} alt={post.data.title} class="w-32 h-32 object-contain transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:drop-shadow-xl" />
+                    ) : (
+                        <div class={`w-full h-full flex items-center justify-center transition-all duration-300 group-hover:-translate-y-2 ${color.bg}`}>
+                            <span class={`text-4xl md:text-5xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-xl ${color.text}`}>
+                                {post.data.title[0]}
+                            </span>
+                        </div>
+                    )}
+                </div>
+                <div class="flex items-center gap-3 text-sm font-mono text-gray-500 uppercase tracking-wider mb-3">
+                    <span>{post.data.category}</span>
+                    <span class="text-gray-300">—</span>
+                    <span>{formatDate(post.data.date)}</span>
+                </div>
+                <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug">{post.data.title}</h3>
+                {post.data.demo && (
+                    <div class="mt-3">
+                        <span class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+                            查看 Demo
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </span>
+                    </div>
+                )}
+            </a>
+          );
+        })}
+    </div>
+
+    <div class="mt-16 flex justify-center">
+        <a href={site.writing.buttonHref} class="bg-dark text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-gray-800 transition-colors inline-block">
+            {site.writing.buttonText}
+        </a>
+    </div>
+</section>

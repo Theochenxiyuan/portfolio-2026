@@ -1,0 +1,23 @@
+---
+import { site } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-[12px] border-b border-gray-100">
+    <div class="max-w-page mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="block" aria-label="Home">
+            <img src={site.header.logo} alt="Logo" class="w-8 h-8 rounded">
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+            {site.header.nav.map((item) => (
+                <a 
+                    href={item.href} 
+                    class={`text-base font-medium transition-colors ${item.href === currentPath ? 'text-dark' : 'text-gray-500 hover:text-dark'}`}
+                >
+                    {item.label}
+                </a>
+            ))}
+        </nav>
+    </div>
+</header>

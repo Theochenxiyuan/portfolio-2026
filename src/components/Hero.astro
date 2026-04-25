@@ -1,0 +1,11 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="max-w-page mx-auto px-6 pt-32 pb-24 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-dark leading-[1.1]">
+        {site.hero.greeting}
+        <span class="text-primary">{site.hero.name}</span> 。<br>{site.hero.title}
+    </h1>
+
+</section>

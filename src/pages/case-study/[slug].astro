@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('case-study');
+  const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return sortedPosts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: { post, index },
+  }));
+}
+
+const { post, index } = Astro.props;
+const { Content } = await post.render();
+const pageTitle = post.data.title + ' - Case Study';
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+---
+
+<Layout title={pageTitle}>
+    <Header />
+    <article>
+        <!-- Cover Image -->
+        {post.data.image && (
+            <div class="w-full bg-gradient-to-b from-gray-50 via-gray-50/50 to-white pt-16 pb-4">
+                <div class="max-w-page mx-auto px-6">
+                    <div class="max-w-3xl mx-auto flex justify-center">
+                        <img src={post.data.image} alt={post.data.title} class="h-40 md:h-56 w-auto object-contain" />
+                    </div>
+                </div>
+            </div>
+        )}
+
+        <!-- Title Section -->
+        <header class="max-w-4xl mx-auto px-6 pt-12 pb-12 text-center">
+            <div class="flex items-center justify-center gap-4 text-sm font-mono text-gray-500 uppercase tracking-[0.2em] mb-6">
+                <span>{post.data.category}</span>
+                <span class="text-gray-300">—</span>
+                <span>{formatDate(post.data.date)}</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-dark leading-[1.1]">
+                {post.data.title}
+            </h1>
+            {post.data.description && (
+                <p class="mt-6 text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
+                    {post.data.description}
+                </p>
+            )}
+            {post.data.demo && (
+                <div class="mt-8">
+                    <a href={post.data.demo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-dark text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        查看 Demo
+                    </a>
+                </div>
+            )}
+        </header>
+
+        <!-- Divider -->
+        <div class="max-w-xs mx-auto px-6 mb-16">
+            <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-4xl mx-auto px-6 pb-24">
+            <div class="prose prose-lg prose-gray max-w-none
+                prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-dark
+                prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                prose-p:text-gray-600 prose-p:leading-relaxed
+                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                prose-code:text-primary prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+                prose-pre:bg-gray-900 prose-pre:text-gray-100
+                prose-blockquote:border-l-primary prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-500
+                prose-ul:my-6 prose-li:text-gray-600">
+                <Content />
+            </div>
+            
+            <!-- Back Link -->
+            <div class="mt-20 pt-8 border-t border-gray-200 flex items-center justify-between">
+                <a href="/projects" class="group text-base font-medium text-dark hover:text-primary transition-colors flex items-center gap-2">
+                    <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    返回作品列表
+                </a>
+                <span class="text-sm text-gray-400 font-mono">{post.data.category}</span>
+            </div>
+        </div>
+    </article>
+    <Footer />
+</Layout>
