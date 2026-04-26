@@ -29,7 +29,7 @@ function getColor(title: string) {
 }
 ---
 
-<Layout title="All Projects - Case Studies">
+<Layout title="全部作品 - Theo's Portfolio">
     <Header />
     <main class="max-w-page mx-auto px-6 py-24">
         <div class="max-w-2xl mb-16">
@@ -43,34 +43,34 @@ function getColor(title: string) {
             {sortedPosts.map((post) => {
               const color = getColor(post.data.title);
               return (
-                <a href={`/case-study/${post.slug}`} class="group block">
-                    <div class="aspect-[3/4] bg-gradient-to-b from-transparent to-gray-100 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
-                        {post.data.image ? (
-                            <img src={post.data.image} alt={post.data.title} class="w-32 h-32 object-contain transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:drop-shadow-xl" />
-                        ) : (
-                            <div class={`w-full h-full flex items-center justify-center transition-all duration-300 group-hover:-translate-y-2 ${color.bg}`}>
-                                <span class={`text-4xl md:text-5xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-xl ${color.text}`}>
-                                    {post.data.title[0]}
-                                </span>
-                            </div>
-                        )}
-                    </div>
-                    <div class="flex items-center gap-3 text-sm font-mono text-gray-500 uppercase tracking-wider mb-3">
-                        <span>{post.data.category}</span>
-                        <span class="text-gray-300">—</span>
-                        <span>{formatDate(post.data.date)}</span>
-                    </div>
-                    <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug mb-2">{post.data.title}</h3>
-                    <p class="text-base text-gray-600">{post.data.description}</p>
-                    {post.data.demo && (
-                        <div class="mt-3">
-                            <span class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
-                                查看 Demo
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            </span>
+                <div class="block">
+                    <a href={`/case-study/${post.slug}`} class="group block">
+                        <div class="aspect-[3/4] bg-gradient-to-b from-transparent to-gray-100 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+                            {post.data.image ? (
+                                <img src={post.data.image} alt={post.data.title} class="w-32 h-32 object-contain transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:drop-shadow-xl" />
+                            ) : (
+                                <div class={`w-full h-full flex items-center justify-center transition-all duration-300 group-hover:-translate-y-2 ${color.bg}`}>
+                                    <span class={`text-4xl md:text-5xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-xl ${color.text}`}>
+                                        {post.data.title[0]}
+                                    </span>
+                                </div>
+                            )}
                         </div>
+                        <div class="flex items-center gap-3 text-sm font-mono text-gray-500 uppercase tracking-wider mb-3">
+                            <span>{post.data.category}</span>
+                            <span class="text-gray-300">—</span>
+                            <span>{formatDate(post.data.date)}</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug mb-2">{post.data.title}</h3>
+                        <p class="text-base text-gray-600">{post.data.description}</p>
+                    </a>
+                    {post.data.demo && (
+                        <a href={post.data.demo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium border border-dark text-dark px-4 py-2 rounded-full hover:bg-dark hover:text-white transition-colors mt-2">
+                            查看 Demo
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
                     )}
-                </a>
+                </div>
               );
             })}
         </div>
