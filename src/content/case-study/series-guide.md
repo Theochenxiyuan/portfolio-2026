@@ -58,7 +58,10 @@ demo: 'https://seriesguidedemo-amgov01ad.maozi.io/'
 
 这组概念的设计意图是：用户不需要知道为什么某部作品被归入某个组、为什么这个组出现在这个位置——他们只需要跟随路线，消费内容。
 
-![核心概念](/case-study/series-guide/concepts.png)
+<figure>
+  <img src="/case-study/series-guide/concepts.png" alt="核心概念" />
+  <figcaption>图 1：核心概念</figcaption>
+</figure>
 
 ---
 
@@ -139,7 +142,10 @@ demo: 'https://seriesguidedemo-amgov01ad.maozi.io/'
 - 看到"有序组"→ 按组内的序号看
 - 看到"作品+附属"→ 按备注说明的位置看
 
-![产品架构](/case-study/series-guide/architecture.png)
+<figure>
+  <img src="/case-study/series-guide/architecture.png" alt="产品架构" />
+  <figcaption>图 2：产品架构</figcaption>
+</figure>
 
 ---
 
@@ -202,7 +208,10 @@ demo: 'https://seriesguidedemo-amgov01ad.maozi.io/'
 
 这个流程的核心价值是：**跳过视觉打磨，快速验证核心交互逻辑是否自洽**。
 
-## ![UI草图对比AI代码原型](/case-study/series-guide/prototyping.png)
+<figure>
+  <img src="/case-study/series-guide/prototyping.png" alt="UI 草图对比 AI 代码原型" />
+  <figcaption>图 3：UI 草图对比 AI 代码原型</figcaption>
+</figure>
 
 ## 七、总结
 
