@@ -10,6 +10,7 @@ const caseStudyCollection = defineCollection({
     featured: z.boolean().default(false),
     image: z.string().optional(),
     demo: z.string().optional(),
+    github: z.string().optional(),
   }),
 });
 

@@ -39,6 +39,9 @@
         "demo": {
           "type": "string"
         },
+        "github": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }

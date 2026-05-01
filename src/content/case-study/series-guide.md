@@ -4,7 +4,7 @@ description: '重新定义复杂影视/游戏系列的观看指南'
 date: 2026-04-23
 category: 'C端产品设计'
 featured: true
-image: '/series-guide-logo.webp'
+image: '/case-study/series-guide/logo.webp'
 demo: 'https://seriesguidedemo-amgov01ad.maozi.io/'
 ---
 
