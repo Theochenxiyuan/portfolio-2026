@@ -1,94 +1,137 @@
 .article-content {
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: #374151;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #374151;
 }
 .article-content > * + * {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 .article-content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #111827;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #e5e7eb;
-    letter-spacing: -0.025em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  letter-spacing: -0.025em;
 }
 .article-content h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #111827;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.025em;
 }
 .article-content p {
-    margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 .article-content a {
-    color: #F04444;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+  color: #f04444;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .article-content a:hover {
-    color: #dc2626;
+  color: #dc2626;
 }
 .article-content strong {
-    font-weight: 600;
-    color: #111827;
+  font-weight: 600;
+  color: #111827;
 }
 .article-content blockquote {
-    margin: 1.5rem 0;
-    padding: 0.5rem 0 0.5rem 1.25rem;
-    border-left: 4px solid #d1d5db;
-    color: #4b5563;
-    font-style: normal;
+  margin: 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  border-left: 4px solid #d1d5db;
+  color: #4b5563;
+  font-style: normal;
 }
 .article-content blockquote p {
-    margin: 0;
+  margin: 0;
 }
 .article-content blockquote p + p {
-    margin-top: 0.75rem;
+  margin-top: 0.75rem;
 }
-.article-content ul, .article-content ol {
-    margin: 1.25rem 0;
-    padding-left: 1.5rem;
+.article-content ul,
+.article-content ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
 }
-.article-content ul { list-style-type: disc; }
-.article-content ol { list-style-type: decimal; }
-.article-content li { margin-bottom: 0.5rem; }
-.article-content li::marker { color: #9ca3af; }
+.article-content ul {
+  list-style-type: disc;
+}
+.article-content ol {
+  list-style-type: decimal;
+}
+.article-content li {
+  margin-bottom: 0.5rem;
+}
+.article-content li::marker {
+  color: #9ca3af;
+}
 .article-content code {
-    background-color: #f3f4f6;
-    color: #374151;
-    padding: 0.2em 0.4em;
-    border-radius: 0.25rem;
-    font-size: 0.875em;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 }
 .article-content pre {
-    background-color: #f6f8fa;
-    border-radius: 0.75rem;
-    padding: 1.25rem;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    font-size: 0.875rem;
-    line-height: 1.7;
+  background-color: #f6f8fa;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
 }
 .article-content pre code {
-    background-color: transparent;
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
+  background-color: transparent;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
 }
 .article-content hr {
-    border: 0;
-    border-top: 1px solid #e5e7eb;
-    margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 2.5rem 0;
 }
 .article-content img {
-    border-radius: 0.75rem;
-    margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.dark .article-content {
+  color: #d1d5db;
+}
+.dark .article-content h2 {
+  color: #f9fafb;
+  border-bottom-color: #374151;
+}
+.dark .article-content h3 {
+  color: #f9fafb;
+}
+.dark .article-content strong {
+  color: #f9fafb;
+}
+.dark .article-content blockquote {
+  border-left-color: #4b5563;
+  color: #9ca3af;
+}
+.dark .article-content code {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+.dark .article-content pre {
+  background-color: #111827;
+}
+.dark .article-content hr {
+  border-top-color: #374151;
+}
+.dark .article-content ul,
+.dark .article-content ol {
+  color: #d1d5db;
 }
