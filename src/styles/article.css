@@ -52,6 +52,12 @@
 .article-content blockquote p + p {
   margin-top: 0.75rem;
 }
+.article-content blockquote p:first-of-type::before {
+  content: none;
+}
+.article-content blockquote p:last-of-type::after {
+  content: none;
+}
 .article-content ul,
 .article-content ol {
   margin: 1.25rem 0;

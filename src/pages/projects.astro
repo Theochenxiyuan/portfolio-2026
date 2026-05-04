@@ -5,11 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const posts = await getCollection('case-study');
-const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-
-function formatDate(date: Date) {
-  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
-}
+const sortedPosts = posts.sort((a, b) => b.data.year - a.data.year);
 
 const colors = [
   { bg: 'bg-indigo-50', text: 'text-indigo-700' },
@@ -59,7 +55,7 @@ function getColor(title: string) {
                         <div class="flex items-center gap-3 text-sm font-mono text-gray-500 uppercase tracking-wider mb-3 dark:text-gray-400">
                             <span>{post.data.category}</span>
                             <span class="text-gray-300 dark:text-gray-600">—</span>
-                            <span>{formatDate(post.data.date)}</span>
+                            <span>{post.data.year}</span>
                         </div>
                         <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug mb-2 dark:text-white">{post.data.title}</h3>
                         <p class="text-base text-gray-600 dark:text-gray-300">{post.data.description}</p>

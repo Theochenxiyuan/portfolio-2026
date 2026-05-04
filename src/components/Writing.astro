@@ -3,12 +3,8 @@ import { getCollection } from 'astro:content';
 import { site } from '../data/site';
 
 const posts = await getCollection('case-study');
-const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const sortedPosts = posts.sort((a, b) => b.data.year - a.data.year);
 const featuredPosts = sortedPosts.slice(0, 3);
-
-function formatDate(date: Date) {
-  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
-}
 
 const colors = [
   { bg: 'bg-indigo-50', text: 'text-indigo-700' },
@@ -54,7 +50,7 @@ function getColor(title: string) {
                     <div class="flex items-center gap-3 text-sm font-mono text-gray-500 uppercase tracking-wider mb-3 dark:text-gray-400">
                         <span>{post.data.category}</span>
                         <span class="text-gray-300 dark:text-gray-600">—</span>
-                        <span>{formatDate(post.data.date)}</span>
+                        <span>{post.data.year}</span>
                     </div>
                     <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug dark:text-white">{post.data.title}</h3>
                 </a>
@@ -80,7 +76,7 @@ function getColor(title: string) {
     </div>
 
     <div class="mt-16 flex justify-center">
-        <a href={site.writing.buttonHref} class="bg-dark text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-gray-800 transition-colors inline-block">
+        <a href={site.writing.buttonHref} class="bg-dark text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-gray-800 transition-colors inline-block dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
             {site.writing.buttonText}
         </a>
     </div>

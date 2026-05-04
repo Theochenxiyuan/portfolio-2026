@@ -39,7 +39,6 @@ const ogImageURL = new URL(ogImage, Astro.url.origin).toString();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@0.462.0"></script>
     <script is:inline>
       const t = localStorage.getItem('theme');
       if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -56,15 +55,21 @@ const ogImageURL = new URL(ogImage, Astro.url.origin).toString();
             background-color: #F04444;
             color: white;
         }
+        .prose pre code {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-size: inherit;
+            color: inherit;
+        }
+        .prose blockquote p:first-of-type::before,
+        .prose blockquote p:last-of-type::after {
+            content: none;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100">
     <slot />
-    <script>
-        if (typeof window.lucide !== 'undefined') {
-            window.lucide.createIcons();
-        }
-    </script>
     <script is:inline src="/scripts/image-lightbox.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 ---
 title: '入坑助手'
 description: '重新定义复杂影视/游戏系列的观看指南'
-date: 2026-04-23
+year: 2026
 category: 'C端产品设计'
 featured: true
 image: '/case-study/series-guide/logo.webp'

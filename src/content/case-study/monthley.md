@@ -1,7 +1,7 @@
 ---
 title: '月理'
 description: '以“月”为节奏的个人兴趣追踪应用'
-date: 2026-03-05
+year: 2025
 category: 'C端产品设计&开发'
 featured: true
 image: '/case-study/monthley/logo.webp'

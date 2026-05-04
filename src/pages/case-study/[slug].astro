@@ -6,7 +6,7 @@ import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('case-study');
-  const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  const sortedPosts = posts.sort((a, b) => b.data.year - a.data.year);
   return sortedPosts.map((post, index) => ({
     params: { slug: post.slug },
     props: { post, index },
@@ -16,14 +16,12 @@ export async function getStaticPaths() {
 const { post, index } = Astro.props;
 const { Content } = await post.render();
 const pageTitle = post.data.title + ' - Case Study';
-
-function formatDate(date: Date) {
-  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
-}
+const pageDescription = post.data.description;
+const pageOgImage = post.data.image || '/logo.webp';
 
 ---
 
-<Layout title={pageTitle}>
+<Layout title={pageTitle} description={pageDescription} ogImage={pageOgImage}>
     <Header />
     <article>
         <!-- Cover Image -->
@@ -42,7 +40,7 @@ function formatDate(date: Date) {
             <div class="flex items-center justify-center gap-4 text-sm font-mono text-gray-500 uppercase tracking-[0.2em] mb-6 dark:text-gray-400">
                 <span>{post.data.category}</span>
                 <span class="text-gray-300 dark:text-gray-600">—</span>
-                <span>{formatDate(post.data.date)}</span>
+                <span>{post.data.year}</span>
             </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-dark leading-[1.1] dark:text-white">
                 {post.data.title}
@@ -82,10 +80,12 @@ function formatDate(date: Date) {
                 prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
                 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
                 prose-p:text-gray-600 prose-p:leading-relaxed dark:prose-p:text-gray-300
+                prose-strong:text-gray-900 dark:prose-strong:text-gray-100
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                 prose-code:text-primary prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm dark:prose-code:bg-gray-800
                 prose-pre:bg-gray-900 prose-pre:text-gray-100
                 prose-blockquote:border-l-primary prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-500 dark:prose-blockquote:text-gray-400
+                prose-th:text-gray-900 prose-td:text-gray-700 dark:prose-th:text-gray-200 dark:prose-td:text-gray-300
                 prose-ul:my-6 prose-li:text-gray-600 dark:prose-li:text-gray-300
                 prose-figure:my-10 prose-figcaption:mt-3 prose-figcaption:text-center prose-figcaption:text-sm prose-figcaption:text-gray-500 prose-figcaption:dark:text-gray-400
                 prose-img:mx-auto prose-img:max-h-[50vh] prose-img:w-auto prose-img:object-contain prose-img:rounded-xl prose-img:ring-1 prose-img:ring-gray-900/5 prose-img:cursor-pointer prose-img:transition-all prose-img:duration-300 hover:prose-img:scale-[1.02] hover:prose-img:shadow-lg hover:prose-img:shadow-gray-900/10 dark:prose-img:ring-white/10 dark:hover:prose-img:shadow-gray-900/30">

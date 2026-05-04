@@ -5,7 +5,7 @@ const caseStudyCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.date(),
+    year: z.number(),
     category: z.string(),
     featured: z.boolean().default(false),
     image: z.string().optional(),

@@ -10,21 +10,8 @@
         "description": {
           "type": "string"
         },
-        "date": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
+        "year": {
+          "type": "number"
         },
         "category": {
           "type": "string"
@@ -49,7 +36,7 @@
       "required": [
         "title",
         "description",
-        "date",
+        "year",
         "category"
       ],
       "additionalProperties": false
