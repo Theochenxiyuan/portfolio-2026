@@ -1,13 +1,11 @@
 ---
-title: '小熊猫之家（进行中）'
+title: '（进行中）小熊猫之家'
 description: '情感共鸣式科普应用'
 year: 2026
 category: '概念设计&用户研究'
 featured: true
 image: '/case-study/red-panda/logo.png'
 ---
-
-> **备注：** 这个作品展示的是设计前期的探索过程：产品定义、痛点分析、用户研究等，暂时没有最终的成品或原型。项目仍在推进中，本案例重点在于呈现我的产品思维与研究逻辑。
 
 ---
 
@@ -46,16 +44,36 @@ image: '/case-study/red-panda/logo.png'
 
 在确定主题和假设后，需要回答谁会被这种体验吸引。
 
-`[示意图：四类用户画像卡片]`
-
 通过桌面研究和少量访谈（主要渠道：游戏社区、动物保护论坛、大学社团），梳理出四类潜在用户：
 
 | 用户类型      | 核心特征                           | 与产品的关系               |
 | ------------- | ---------------------------------- | -------------------------- |
 | 动物爱好者    | 对小熊猫有好感，主动搜索相关知识   | 种子用户，有情感基础       |
-| 休闲游戏玩家  | 喜欢像素风、治愈系、剧情向RPG      | 流量入口，需要用游戏性留住 |
+| 游戏玩家      | 喜欢像素风、治愈系、剧情向RPG      | 流量入口，需要用游戏性留住 |
 | 公益/环保群体 | 关注保护议题，愿意采取行动         | 行动转化层，适合公益联动   |
 | Z世代年轻人   | 习惯社区分享，追求“萌”和“治愈”内容 | 社群裂变层，容易自发传播   |
+
+我将这些潜在用户群体整理为四个用户画像：
+
+<figure>
+  <img src="/case-study/red-panda/persona-1.png" alt="用户画像一" />
+  <figcaption>用户画像一：动物爱好者</figcaption>
+</figure>
+
+<figure>
+  <img src="/case-study/red-panda/persona-2.png" alt="用户画像二" />
+  <figcaption>用户画像二：游戏玩家</figcaption>
+</figure>
+
+<figure>
+  <img src="/case-study/red-panda/persona-3.png" alt="用户画像三" />
+  <figcaption>用户画像三：公益/环保群体</figcaption>
+</figure>
+
+<figure>
+  <img src="/case-study/red-panda/persona-4.png" alt="用户画像四" />
+  <figcaption>用户画像四：Z世代年轻人</figcaption>
+</figure>
 
 一个关键判断：游戏玩家和动物爱好者的交集不大。产品必须“两头够得着”——对玩家足够好玩，对动物爱好者有知识深度。
 
@@ -87,8 +105,6 @@ image: '/case-study/red-panda/logo.png'
 
 “记忆碎片”是目前比较符合这些约束的方向——通过章节式推进，逐步揭示主角的过往。但解锁方式、交互形式、叙事节奏，都还需要进一步设计。
 
-`[示意图：此部分可放核心机制方向推演草图，如有]`
-
 ---
 
 ## 四、产品架构
@@ -97,7 +113,10 @@ image: '/case-study/red-panda/logo.png'
 
 解决方案是加入社区模块，让游戏成就在社区中获得延续的意义。
 
-`[示意图：整体信息架构图 —— 游戏模块 + 论坛模块 + 身份标识系统]`
+<figure>
+  <img src="/case-study/red-panda/info-arch.png" alt="信息架构图" />
+  <figcaption>图 1：产品信息架构</figcaption>
+</figure>
 
 ### 两个模块的职责
 
@@ -120,17 +139,18 @@ image: '/case-study/red-panda/logo.png'
 
 论坛版块规划：
 
-`[示意图：论坛版块结构图 —— 小熊猫科普 / 游戏交流 / 创作分享 / 公告活动]`
-
 每周推出官方话题（如“你心中的小熊猫是什么性格？”），目的是在游戏内容消耗完后，持续提供轻量级的互动入口。
 
 ---
 
 ## 五、视觉风格
 
-美术风格选择了可爱清新的像素风（俯视角，参考《星露谷物语》《To the Moon》）。
+美术风格选择可爱清新的像素风（俯视角，参考《星露谷物语》《To the Moon》）。
 
-`[示意图：参考风格图 / 情绪板]`
+<figure>
+  <img src="/case-study/red-panda/game-visual.png" alt="参考风格图" />
+  <figcaption>图 2：参考风格图（AI生成）</figcaption>
+</figure>
 
 决策基于三个考量：
 
@@ -151,8 +171,6 @@ image: '/case-study/red-panda/logo.png'
 - 完整信息架构（游戏 + 论坛 + 身份标识系统）
 - 核心机制的方向性探索与排除
 - 美术风格确认
-
-`[示意图：信息架构脑图 / 用户Persona卡片]`
 
 ### 进行中
 
