@@ -39,10 +39,58 @@ export const site = {
     buttonHref: '/projects',
   },
 
+  skills: {
+    title: '技能与工具',
+    description:
+      '跨学科背景让我能在设计与技术之间自由切换，从用户研究到代码实现独立完成完整闭环。',
+    categories: [
+      {
+        title: '设计与研究',
+        skills: [
+          '用户访谈',
+          '亲和图',
+          '用户画像',
+          '用户旅程图',
+          '信息架构',
+          '交互设计',
+          '可用性测试',
+          'Figma/墨刀',
+          '原型设计',
+        ],
+      },
+      {
+        title: '前端开发',
+        skills: [
+          'Vue 3',
+          'React',
+          'TypeScript',
+          'TailwindCSS',
+          'Element Plus',
+          'HTML/CSS',
+          '响应式设计',
+        ],
+      },
+      {
+        title: '后端与工具',
+        skills: [
+          'Node.js',
+          'Supabase/Firebase',
+          'MongoDB',
+          'Git',
+          'Vite',
+          'NPM',
+        ],
+      },
+      {
+        title: 'AI 辅助工作流',
+        skills: ['大语言模型', 'Codex/OpenCode', 'Trae/Cursor', 'AI 辅助设计'],
+      },
+    ],
+  },
+
   author: {
     name: 'Theo Chen',
     avatar: '/favicon.svg',
-    twitter: '#',
   },
 
   footer: {
