@@ -1,9 +1,12 @@
 ---
-title: '（进行中）小熊猫之家'
+title: '小熊猫之家'
 description: '情感共鸣式科普应用'
 year: 2026
 category: '概念设计&用户研究'
 featured: true
+tags:
+  - label: 进行中
+    color: amber
 image: '/case-study/red-panda/logo.png'
 ---
 

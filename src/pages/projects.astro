@@ -23,6 +23,22 @@ const colors = [
 function getColor(title: string) {
   return colors[title.charCodeAt(0) % colors.length];
 }
+
+function tagColorClasses(color: string) {
+  const map: Record<string, string> = {
+    amber: 'bg-amber-100 text-amber-700 ring-amber-600/20 dark:bg-amber-900/30 dark:text-amber-400 dark:ring-amber-400/20',
+    blue: 'bg-blue-100 text-blue-700 ring-blue-600/20 dark:bg-blue-900/30 dark:text-blue-400 dark:ring-blue-400/20',
+    green: 'bg-green-100 text-green-700 ring-green-600/20 dark:bg-green-900/30 dark:text-green-400 dark:ring-green-400/20',
+    red: 'bg-red-100 text-red-700 ring-red-600/20 dark:bg-red-900/30 dark:text-red-400 dark:ring-red-400/20',
+    indigo: 'bg-indigo-100 text-indigo-700 ring-indigo-600/20 dark:bg-indigo-900/30 dark:text-indigo-400 dark:ring-indigo-400/20',
+    pink: 'bg-pink-100 text-pink-700 ring-pink-600/20 dark:bg-pink-900/30 dark:text-pink-400 dark:ring-pink-400/20',
+    purple: 'bg-purple-100 text-purple-700 ring-purple-600/20 dark:bg-purple-900/30 dark:text-purple-400 dark:ring-purple-400/20',
+    emerald: 'bg-emerald-100 text-emerald-700 ring-emerald-600/20 dark:bg-emerald-900/30 dark:text-emerald-400 dark:ring-emerald-400/20',
+    sky: 'bg-sky-100 text-sky-700 ring-sky-600/20 dark:bg-sky-900/30 dark:text-sky-400 dark:ring-sky-400/20',
+    orange: 'bg-orange-100 text-orange-700 ring-orange-600/20 dark:bg-orange-900/30 dark:text-orange-400 dark:ring-orange-400/20',
+  };
+  return map[color] || map.amber;
+}
 ---
 
 <Layout title="全部作品 - Theo's Portfolio">
@@ -58,6 +74,15 @@ function getColor(title: string) {
                             <span class="text-gray-300 dark:text-gray-600">—</span>
                             <span>{post.data.year}</span>
                         </div>
+                        {post.data.tags && post.data.tags.length > 0 && (
+                          <div class="flex flex-wrap gap-1.5 mb-2">
+                            {post.data.tags.map((tag) => (
+                              <span class={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold ring-1 ${tagColorClasses(tag.color)}`}>
+                                {tag.label}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                         <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug mb-2 dark:text-white">{post.data.title}</h3>
                         <p class="text-base text-gray-600 dark:text-gray-300">{post.data.description}</p>
                     </a>

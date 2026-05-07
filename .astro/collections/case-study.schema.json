@@ -20,6 +20,37 @@
           "type": "boolean",
           "default": false
         },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string",
+                "enum": [
+                  "amber",
+                  "blue",
+                  "green",
+                  "red",
+                  "indigo",
+                  "pink",
+                  "purple",
+                  "emerald",
+                  "sky",
+                  "orange"
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "color"
+            ],
+            "additionalProperties": false
+          }
+        },
         "image": {
           "type": "string"
         },
