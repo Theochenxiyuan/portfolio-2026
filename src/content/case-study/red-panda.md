@@ -7,6 +7,8 @@ featured: true
 image: '/case-study/red-panda/logo.png'
 ---
 
+> **备注：** 本作品展示的是设计前期的探索过程：没有最终的成品或Demo。
+
 ---
 
 ## 一、起点

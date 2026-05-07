@@ -1,7 +1,7 @@
 ---
 import { site } from '../data/site';
 
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
 <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-[12px] border-b border-gray-100 dark:bg-gray-950/80 dark:border-gray-800">
