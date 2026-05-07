@@ -15,7 +15,8 @@ const caseStudyCollection = defineCollection({
       src: z.string(),
       title: z.string(),
       alt: z.string().optional(),
-      type: z.enum(['desktop', 'mobile', 'tablet', 'flow', 'detail']).optional(),
+      type: z.string().optional(),
+      span: z.number().int().min(1).max(2).optional(),
     })).optional(),
   }),
 });

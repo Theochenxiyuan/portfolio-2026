@@ -44,14 +44,12 @@
                 "type": "string"
               },
               "type": {
-                "type": "string",
-                "enum": [
-                  "desktop",
-                  "mobile",
-                  "tablet",
-                  "flow",
-                  "detail"
-                ]
+                "type": "string"
+              },
+              "span": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2
               }
             },
             "required": [
