@@ -7,7 +7,7 @@ featured: true
 tags:
   - label: 进行中
     color: amber
-image: '/case-study/red-panda/logo.png'
+image: '/case-study/red-panda/logo.webp'
 ---
 
 > **备注：** 本作品展示的是设计前期的探索过程：没有最终的成品或Demo。
@@ -61,22 +61,22 @@ image: '/case-study/red-panda/logo.png'
 我将这些潜在用户群体整理为四个用户画像：
 
 <figure>
-  <img src="/case-study/red-panda/persona-1.png" alt="用户画像一" />
+  <img src="/case-study/red-panda/persona-1.webp" alt="用户画像一" />
   <figcaption>用户画像一：动物爱好者</figcaption>
 </figure>
 
 <figure>
-  <img src="/case-study/red-panda/persona-2.png" alt="用户画像二" />
+  <img src="/case-study/red-panda/persona-2.webp" alt="用户画像二" />
   <figcaption>用户画像二：游戏玩家</figcaption>
 </figure>
 
 <figure>
-  <img src="/case-study/red-panda/persona-3.png" alt="用户画像三" />
+  <img src="/case-study/red-panda/persona-3.webp" alt="用户画像三" />
   <figcaption>用户画像三：公益/环保群体</figcaption>
 </figure>
 
 <figure>
-  <img src="/case-study/red-panda/persona-4.png" alt="用户画像四" />
+  <img src="/case-study/red-panda/persona-4.webp" alt="用户画像四" />
   <figcaption>用户画像四：Z世代年轻人</figcaption>
 </figure>
 
@@ -119,7 +119,7 @@ image: '/case-study/red-panda/logo.png'
 解决方案是加入社区模块，让游戏成就在社区中获得延续的意义。
 
 <figure>
-  <img src="/case-study/red-panda/info-arch.png" alt="信息架构图" />
+  <img src="/case-study/red-panda/info-arch.webp" alt="信息架构图" />
   <figcaption>图 1：产品信息架构</figcaption>
 </figure>
 
@@ -153,7 +153,7 @@ image: '/case-study/red-panda/logo.png'
 美术风格选择可爱清新的像素风（俯视角，参考《星露谷物语》《To the Moon》）。
 
 <figure>
-  <img src="/case-study/red-panda/game-visual.png" alt="参考风格图" />
+  <img src="/case-study/red-panda/game-visual.webp" alt="参考风格图" />
   <figcaption>图 2：参考风格图（AI生成）</figcaption>
 </figure>
 

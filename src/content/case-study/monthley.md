@@ -8,47 +8,47 @@ image: '/case-study/monthley/logo.webp'
 demo: 'https://monthley.netlify.app/'
 github: 'https://github.com/Theochenxiyuan/monthley'
 uiShots:
-  - src: '/case-study/monthley/gallery/timeline-1.png'
+  - src: '/case-study/monthley/gallery/timeline-1.webp'
     title: '月度时间线 (月份展开)'
     alt: 'Monthley 月度时间线 (月份展开) 界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/timeline-2.png'
+  - src: '/case-study/monthley/gallery/timeline-2.webp'
     title: '月度时间线 (月份收起)'
     alt: 'Monthley 月度时间线 (月份收起) 界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/filter.png'
+  - src: '/case-study/monthley/gallery/filter.webp'
     title: '条目筛选'
     alt: 'Monthley 条目筛选界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/timeline-filtered.png'
+  - src: '/case-study/monthley/gallery/timeline-filtered.webp'
     title: '筛选后的月度时间线'
     alt: 'Monthley 筛后的月度时间线界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/add-entry.png'
+  - src: '/case-study/monthley/gallery/add-entry.webp'
     title: '添加条目'
     alt: 'Monthley 添加条目界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/search-entry.png'
+  - src: '/case-study/monthley/gallery/search-entry.webp'
     title: '搜索条目'
     alt: 'Monthley 搜索条目界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/stats.png'
+  - src: '/case-study/monthley/gallery/stats.webp'
     title: '统计'
     alt: 'Monthley 统计界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/annual-review.png'
+  - src: '/case-study/monthley/gallery/annual-review.webp'
     title: '年度回顾'
     alt: 'Monthley 年度回顾界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/settings.png'
+  - src: '/case-study/monthley/gallery/settings.webp'
     title: '设置'
     alt: 'Monthley 设置界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/settings-sync.png'
+  - src: '/case-study/monthley/gallery/settings-sync.webp'
     title: '设置 (有密钥时)'
     alt: 'Monthley 设置 (有密钥时) 界面'
     type: '移动端'
-  - src: '/case-study/monthley/gallery/sync-status.png'
+  - src: '/case-study/monthley/gallery/sync-status.webp'
     title: '同步状态'
     alt: 'Monthley 同步状态窗口界面'
     type: '移动端'
@@ -71,7 +71,7 @@ uiShots:
 **产品的机会就藏在这个空白地带：介于“什么都不记”和“用生产力工具严格管理”之间，一款为兴趣生活设计的轻量记录与回顾工具。**
 
 <figure>
-  <img src="/case-study/monthley/sketch.png" alt="草图" />
+  <img src="/case-study/monthley/sketch.webp" alt="草图" />
   <figcaption>图 1：草图</figcaption>
 </figure>
 
@@ -102,7 +102,7 @@ uiShots:
 这个边界定义成了后续所有设计决策的“锚点”。每当犹豫一个新功能要不要做，我都会回来看它是否违背了这些原则。比如，有人建议加入“每日提醒”，但因为这违背了“不制造压力”的原则，我决定不做。
 
 <figure>
-  <img src="/case-study/monthley/1.png" alt="界面截图 1" />
+  <img src="/case-study/monthley/1.webp" alt="界面截图 1" />
   <figcaption>图 2：界面截图</figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ _“大多数时候我会在手机上用，但有时候我也想在其他设备�
 **对“未完成”的态度。** 过去月份如果有计划没完成，我不会弹窗、不做红点标记、不强制用户“处理”。只是在该月份卡片的右上角安静地标注“未完成计划”。对应条目旁边有一条细彩线。用户可以看见，也可以忽略。因为生活不是绩效，有些计划没完成，不代表失败。
 
 <figure>
-  <img src="/case-study/monthley/unfinished.png" alt="未完成" />
+  <img src="/case-study/monthley/unfinished.webp" alt="未完成" />
   <figcaption>图 4：未完成计划的克制提醒</figcaption>
 </figure>
 
@@ -184,7 +184,7 @@ Monthley 目前已经完成第一版开发并上线使用，包含：
 - 其他关键依赖：**vue-i18n**（国际化）、**vuedraggable**（拖拽）、**html2canvas**（年度回顾卡片生成）、**vite-plugin-pwa**（PWA 支持）
 
 <figure>
-  <img src="/case-study/monthley/annual-review.png" alt="年度回顾" />
+  <img src="/case-study/monthley/annual-review.webp" alt="年度回顾" />
   <figcaption>图 5：年度回顾</figcaption>
 </figure>
 

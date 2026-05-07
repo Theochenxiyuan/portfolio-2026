@@ -7,27 +7,27 @@ featured: true
 image: '/case-study/series-guide/logo.webp'
 demo: 'https://seriesguidedemo-amgov01ad.maozi.io/'
 uiShots:
-  - src: '/case-study/series-guide/gallery/route.png'
+  - src: '/case-study/series-guide/gallery/route.webp'
     title: '观看路线'
     alt: '入坑助手观看路线页图'
     type: '桌面端'
-  - src: '/case-study/series-guide/gallery/all-groups.png'
+  - src: '/case-study/series-guide/gallery/all-groups.webp'
     title: '所有作品组页'
     alt: '入坑助手所有作品组页图'
     type: '桌面端'
-  - src: '/case-study/series-guide/gallery/unordered-group.png'
+  - src: '/case-study/series-guide/gallery/unordered-group.webp'
     title: '作品组页（无序）'
     alt: '入坑助手无序组图'
     type: '桌面端'
-  - src: '/case-study/series-guide/gallery/ordered-group.png'
+  - src: '/case-study/series-guide/gallery/ordered-group.webp'
     title: '作品组页（有序）'
     alt: '入坑助手有序组图'
     type: '桌面端'
-  - src: '/case-study/series-guide/gallery/all-works.png'
+  - src: '/case-study/series-guide/gallery/all-works.webp'
     title: '所有作品页'
     alt: '入坑助手所有作品页图'
     type: '桌面端'
-  - src: '/case-study/series-guide/gallery/work-detail.png'
+  - src: '/case-study/series-guide/gallery/work-detail.webp'
     title: '作品详情侧拉'
     alt: '入坑助手作品详情侧拉图'
     type: '桌面端'
@@ -84,7 +84,7 @@ uiShots:
 这组概念的设计意图是：用户不需要知道为什么某部作品被归入某个组、为什么这个组出现在这个位置——他们只需要跟随路线，消费内容。
 
 <figure>
-  <img src="/case-study/series-guide/concepts.png" alt="核心概念" />
+  <img src="/case-study/series-guide/concepts.webp" alt="核心概念" />
   <figcaption>图 1：核心概念</figcaption>
 </figure>
 
@@ -168,7 +168,7 @@ uiShots:
 - 看到"作品+附属"→ 按备注说明的位置看
 
 <figure>
-  <img src="/case-study/series-guide/architecture.png" alt="产品架构" />
+  <img src="/case-study/series-guide/architecture.webp" alt="产品架构" />
   <figcaption>图 2：产品架构</figcaption>
 </figure>
 
@@ -235,7 +235,7 @@ uiShots:
 这个流程的核心价值是：**跳过视觉打磨，快速验证核心交互逻辑是否自洽**。当前 Demo 聚焦于消费侧体验（跟随路线、标记进度），创作侧（创建路线、编辑节点）尚未纳入本次原型范围。
 
 <figure>
-  <img src="/case-study/series-guide/prototyping.png" alt="线框图对比 AI 代码原型" />
+  <img src="/case-study/series-guide/prototyping.webp" alt="线框图对比 AI 代码原型" />
   <figcaption>图 3：线框图对比 AI 代码原型</figcaption>
 </figure>
 

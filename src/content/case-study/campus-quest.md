@@ -4,7 +4,7 @@ description: '从“导航工具”到“探索游戏”'
 year: 2024
 category: '概念设计&用户研究'
 featured: true
-image: '/case-study/campus-quest/logo.png'
+image: '/case-study/campus-quest/logo.webp'
 ---
 
 > **备注：** 本作品展示的是设计前期的探索过程：没有最终的成品或Demo。这是一个两人团队项目，各环节紧密协作。其中项目方向变更、用户访谈、用户画像构建及原型测试方法均由我主导。
@@ -22,7 +22,7 @@ image: '/case-study/campus-quest/logo.png'
 我们展开了一轮深入的用户访谈，并将反馈整理为亲和图（Affinity Diagram）。研究结果让我们看到了远比“找不到路”更丰富的图景。
 
 <figure>
-  <img src="/case-study/campus-quest/affinity.png" alt="亲和图" />
+  <img src="/case-study/campus-quest/affinity.webp" alt="亲和图" />
   <figcaption>亲和图 (英文)</figcaption>
 </figure>
 
@@ -181,7 +181,7 @@ image: '/case-study/campus-quest/logo.png'
 最初尝试了**纸质原型**：手绘地图、贴上便签模拟解锁。这帮助我们验证了基本流程，但我们很快意识到，这个项目必须在室外实地测试，而纸质地图经不起风雨和反复使用。
 
 <figure>
-  <img src="/case-study/campus-quest/paper-prototype.png" alt="纸质原型" />
+  <img src="/case-study/campus-quest/paper-prototype.webp" alt="纸质原型" />
   <figcaption>纸质原型</figcaption>
 </figure>
 
@@ -190,7 +190,7 @@ image: '/case-study/campus-quest/logo.png'
 为了还原“到达地点自动解锁”的核心体验，我们采用了 **“绿野仙踪”（Wizard of Oz）原型法**。我跟在测试者身后，手持蓝牙游戏手柄。当他们到达预设地点时，我悄悄按下按钮，远程触发iPad上Figma原型的状态切换——图标从“未解锁”变为“已解锁”。在没有一行代码的情况下，我们高度模拟了未来的完整体验。
 
 <figure>
-  <img src="/case-study/campus-quest/digital-prototype.png" alt="数字原型" />
+  <img src="/case-study/campus-quest/digital-prototype.webp" alt="数字原型" />
   <figcaption>数字原型</figcaption>
 </figure>
 
@@ -225,7 +225,7 @@ image: '/case-study/campus-quest/logo.png'
 这个改动实现了从“或然”到“必然”的转变，确保每一位玩家都经验完整探索，并获得持续的前进动力。
 
 <figure>
-  <img src="/case-study/campus-quest/digital-prototype-2.png" alt="迭代后的数字原型" />
+  <img src="/case-study/campus-quest/digital-prototype-2.webp" alt="迭代后的数字原型" />
   <figcaption>迭代后的数字原型</figcaption>
 </figure>
 
