@@ -29,6 +29,38 @@
         "github": {
           "type": "string"
         },
+        "uiShots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "desktop",
+                  "mobile",
+                  "tablet",
+                  "flow",
+                  "detail"
+                ]
+              }
+            },
+            "required": [
+              "src",
+              "title"
+            ],
+            "additionalProperties": false
+          }
+        },
         "$schema": {
           "type": "string"
         }

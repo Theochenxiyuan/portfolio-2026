@@ -7,6 +7,19 @@ featured: true
 image: '/case-study/monthley/logo.webp'
 demo: 'https://monthley.netlify.app/'
 github: 'https://github.com/Theochenxiyuan/monthley'
+uiShots:
+  - src: '/case-study/monthley/1.png'
+    title: '月度时间线'
+    alt: 'Monthley 月度时间线界面'
+    type: 'desktop'
+  - src: '/case-study/monthley/unfinished.png'
+    title: '未完成计划提示'
+    alt: 'Monthley 未完成计划提示界面'
+    type: 'detail'
+  - src: '/case-study/monthley/annual-review.png'
+    title: '年度回顾'
+    alt: 'Monthley 年度回顾界面'
+    type: 'desktop'
 ---
 
 ## 1. 背景与问题发现

@@ -6,6 +6,19 @@ category: 'C端产品设计'
 featured: true
 image: '/case-study/series-guide/logo.webp'
 demo: 'https://seriesguidedemo-amgov01ad.maozi.io/'
+uiShots:
+  - src: '/case-study/series-guide/prototyping.png'
+    title: '原型对比'
+    alt: '入坑助手原型对比图'
+    type: 'flow'
+  - src: '/case-study/series-guide/concepts.png'
+    title: '核心概念'
+    alt: '入坑助手核心概念图'
+    type: 'desktop'
+  - src: '/case-study/series-guide/architecture.png'
+    title: '信息架构'
+    alt: '入坑助手信息架构图'
+    type: 'desktop'
 ---
 
 ## 一、项目背景与痛点

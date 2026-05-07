@@ -99,7 +99,7 @@
   document.addEventListener('click', (e) => {
     const target = e.target.closest('img');
     if (!target) return;
-    if (!target.closest('.prose')) return;
+    if (!target.closest('.prose') && !target.hasAttribute('data-lightbox')) return;
     e.preventDefault();
     open(target.src, target.alt);
   });

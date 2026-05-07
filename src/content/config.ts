@@ -11,6 +11,12 @@ const caseStudyCollection = defineCollection({
     image: z.string().optional(),
     demo: z.string().optional(),
     github: z.string().optional(),
+    uiShots: z.array(z.object({
+      src: z.string(),
+      title: z.string(),
+      alt: z.string().optional(),
+      type: z.enum(['desktop', 'mobile', 'tablet', 'flow', 'detail']).optional(),
+    })).optional(),
   }),
 });
 

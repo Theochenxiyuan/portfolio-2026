@@ -18,6 +18,7 @@ const { Content } = await post.render();
 const pageTitle = post.data.title + ' - Case Study';
 const pageDescription = post.data.description;
 const pageOgImage = post.data.image || '/logo.webp';
+const hasUiPreview = (post.data.uiShots?.length ?? 0) > 0;
 
 ---
 
@@ -50,11 +51,16 @@ const pageOgImage = post.data.image || '/logo.webp';
                     {post.data.description}
                 </p>
             )}
-            {(post.data.demo || post.data.github) && (
-                <div class="mt-8 flex items-center justify-center gap-3">
+            {(hasUiPreview || post.data.demo || post.data.github) && (
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+                    {hasUiPreview && (
+                        <a href={`/case-study/${post.slug}/ui`} class="inline-flex items-center gap-2 text-base font-medium border border-dark bg-dark text-white px-6 py-3 rounded-full hover:bg-primary hover:border-primary transition-colors dark:border-white dark:bg-white dark:text-gray-900 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white">
+                            UI图展示
+                        </a>
+                    )}
                     {post.data.demo && (
                         <a href={post.data.demo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-base font-medium border border-dark text-dark px-6 py-3 rounded-full hover:bg-dark hover:text-white transition-colors dark:border-gray-300 dark:text-gray-200 dark:hover:bg-white dark:hover:text-gray-900">
-                            查看 Demo
+                            体验 Demo
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     )}

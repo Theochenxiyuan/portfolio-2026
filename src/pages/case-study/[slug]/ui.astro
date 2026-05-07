@@ -1,0 +1,106 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('case-study');
+  return posts
+    .filter((post) => (post.data.uiShots?.length ?? 0) > 0)
+    .map((post) => ({
+      params: { slug: post.slug },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const shots = post.data.uiShots ?? [];
+const heroShot = shots[0];
+const galleryShots = shots.slice(1);
+const pageTitle = `${post.data.title} UI图展示`;
+const pageDescription = `${post.data.title} 的高保真界面截图预览。`;
+const pageOgImage = heroShot?.src || post.data.image || '/logo.webp';
+
+const typeLabels = {
+  desktop: '桌面',
+  mobile: '移动端',
+  tablet: '平板',
+  flow: '流程',
+  detail: '细节',
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} ogImage={pageOgImage}>
+    <Header />
+    <main class="bg-white dark:bg-gray-950">
+        <section class="max-w-page mx-auto px-6 pt-20 pb-10">
+            <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-3 text-sm font-mono text-gray-500 uppercase tracking-[0.2em] mb-5 dark:text-gray-400">
+                        <span>{post.data.category}</span>
+                        <span class="text-gray-300 dark:text-gray-600">/</span>
+                        <span>{post.data.year}</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-dark leading-[1.05] dark:text-white">
+                        {post.data.title} UI图展示
+                    </h1>
+                    <p class="mt-5 text-lg text-gray-600 leading-relaxed max-w-2xl dark:text-gray-300">
+                        {post.data.description}
+                    </p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href={`/case-study/${post.slug}`} class="inline-flex items-center gap-2 text-sm font-medium border border-gray-300 text-dark px-5 py-3 rounded-full hover:border-dark hover:bg-dark hover:text-white transition-colors dark:border-gray-700 dark:text-gray-100 dark:hover:border-white dark:hover:bg-white dark:hover:text-gray-900">
+                        完整案例
+                    </a>
+                    {post.data.demo && (
+                        <a href={post.data.demo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium border border-dark bg-dark text-white px-5 py-3 rounded-full hover:bg-primary hover:border-primary transition-colors dark:border-white dark:bg-white dark:text-gray-900 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white">
+                            体验 Demo
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    )}
+                </div>
+            </div>
+        </section>
+
+        {heroShot && (
+            <section class="max-w-page mx-auto px-6 pb-12">
+                <figure class="overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10 dark:bg-gray-900 dark:ring-white/10">
+                    <img
+                        src={heroShot.src}
+                        alt={heroShot.alt || heroShot.title}
+                        data-lightbox
+                        class="w-full max-h-[78vh] object-contain cursor-zoom-in"
+                    />
+                    <figcaption class="flex flex-wrap items-center justify-between gap-3 border-t border-gray-200 px-4 py-3 text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
+                        <span>{heroShot.title}</span>
+                        {heroShot.type && <span class="font-mono uppercase tracking-wider">{typeLabels[heroShot.type]}</span>}
+                    </figcaption>
+                </figure>
+            </section>
+        )}
+
+        {galleryShots.length > 0 && (
+            <section class="max-w-page mx-auto px-6 pb-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {galleryShots.map((shot) => (
+                        <figure class="overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10 dark:bg-gray-900 dark:ring-white/10">
+                            <img
+                                src={shot.src}
+                                alt={shot.alt || shot.title}
+                                data-lightbox
+                                loading="lazy"
+                                class="w-full max-h-[62vh] object-contain cursor-zoom-in"
+                            />
+                            <figcaption class="flex flex-wrap items-center justify-between gap-3 border-t border-gray-200 px-4 py-3 text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
+                                <span>{shot.title}</span>
+                                {shot.type && <span class="font-mono uppercase tracking-wider">{typeLabels[shot.type]}</span>}
+                            </figcaption>
+                        </figure>
+                    ))}
+                </div>
+            </section>
+        )}
+    </main>
+    <Footer />
+</Layout>
