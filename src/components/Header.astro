@@ -7,7 +7,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-[12px] border-b border-gray-100 dark:bg-gray-950/80 dark:border-gray-800">
     <div class="max-w-page mx-auto px-6 py-4 flex justify-between items-center">
         <a href="/" class="group inline-flex items-center gap-3" aria-label="Home">
-            <img src="/logo.webp" alt="" class="h-10 w-10 rounded-xl object-cover" aria-hidden="true">
+            <img src="/logo.webp" alt="" class="h-10 w-10 rounded-xl object-cover transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105" aria-hidden="true">
             <span class="text-3xl font-semibold tracking-[-0.04em] text-primary transition-colors group-hover:text-dark dark:group-hover:text-white">熙源</span>
             <span class="text-base font-mono uppercase tracking-[0.2em] text-primary transition-colors group-hover:text-dark dark:group-hover:text-white">Theo</span>
         </a>
@@ -21,7 +21,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
                     {item.label}
                 </a>
             ))}
-            <button id="themeToggle" class="p-2 rounded-lg text-gray-500 hover:text-dark hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 transition-colors" aria-label="Toggle theme">
+            <button id="themeToggle" class="p-2 rounded-lg text-gray-500 hover:text-dark hover:bg-gray-100 active:scale-95 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 transition-all" aria-label="Toggle theme">
                 <span class="hidden dark:block">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                 </span>
@@ -32,7 +32,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         </nav>
 
         <div class="flex md:hidden items-center gap-2">
-            <button id="themeToggleMobile" class="p-2 rounded-lg text-gray-500 hover:text-dark hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 transition-colors" aria-label="Toggle theme">
+            <button id="themeToggleMobile" class="p-2 rounded-lg text-gray-500 hover:text-dark hover:bg-gray-100 active:scale-95 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 transition-all" aria-label="Toggle theme">
                 <span class="hidden dark:block">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                 </span>
@@ -40,7 +40,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
                 </span>
             </button>
-            <button id="menuToggle" class="p-2 rounded-lg text-gray-500 hover:text-dark hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+            <button id="menuToggle" class="p-2 rounded-lg text-gray-500 hover:text-dark hover:bg-gray-100 active:scale-95 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 transition-all" aria-label="Toggle menu" aria-expanded="false">
                 <span id="menuIconOpen">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </span>
@@ -51,7 +51,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         </div>
     </div>
 
-    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100 dark:border-gray-800 bg-white/95 backdrop-blur-[12px] dark:bg-gray-950/95">
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-gray-100 dark:border-gray-800 bg-white/95 backdrop-blur-[12px] dark:bg-gray-950/95" aria-hidden="true">
         <div class="max-w-page mx-auto px-6 py-6 flex flex-col gap-4">
             {site.header.nav.map((item) => (
                 <a
@@ -64,6 +64,25 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         </div>
     </div>
 </header>
+
+<style>
+  .mobile-menu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-8px);
+    transition:
+      max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.25s ease,
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-menu.open {
+    max-height: 320px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 
 <script>
   function setupThemeToggle(id: string) {
@@ -82,10 +101,19 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   const iconOpen = document.getElementById('menuIconOpen');
   const iconClose = document.getElementById('menuIconClose');
 
+  mobileMenu?.setAttribute('inert', '');
+
   menuToggle?.addEventListener('click', () => {
-    const isOpen = mobileMenu?.classList.toggle('hidden');
+    mobileMenu?.classList.toggle('open');
+    const isOpen = mobileMenu?.classList.contains('open') ?? false;
     iconOpen?.classList.toggle('hidden');
     iconClose?.classList.toggle('hidden');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
+    if (isOpen) {
+      mobileMenu?.removeAttribute('inert');
+    } else {
+      mobileMenu?.setAttribute('inert', '');
+    }
   });
 </script>

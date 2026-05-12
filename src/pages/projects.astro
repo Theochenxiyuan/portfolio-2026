@@ -44,7 +44,7 @@ function tagColorClasses(color: string) {
 <Layout title="全部作品 - Theo's Portfolio">
     <Header />
     <main class="max-w-page mx-auto px-6 py-24">
-        <div class="max-w-2xl mb-16">
+        <div data-reveal class="max-w-2xl mb-16">
             <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-dark mb-6 dark:text-white">全部作品</h1>
             <p class="text-lg text-gray-600 leading-relaxed dark:text-gray-300">
             这些是我迄今为止完成的项目和案例研究的集合。
@@ -52,13 +52,13 @@ function tagColorClasses(color: string) {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {sortedPosts.map((post) => {
+            {sortedPosts.map((post, index) => {
               const color = getColor(post.data.title);
               const hasUiPreview = (post.data.uiShots?.length ?? 0) > 0;
               return (
-                <div class="block">
+                <div data-reveal="scale" class="motion-card group/card block rounded-2xl" style={`--reveal-delay: ${index * 90}ms`}>
                     <a href={`/case-study/${post.slug}`} class="group block">
-                        <div class="aspect-[3/4] bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-800 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+                        <div class="aspect-[3/4] bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-800 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-gray-900/10 dark:group-hover:shadow-black/30">
                             {post.data.image ? (
                                 <img src={post.data.image} alt={post.data.title} class="w-32 h-32 object-contain transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:drop-shadow-xl" />
                             ) : (
@@ -83,20 +83,20 @@ function tagColorClasses(color: string) {
                             ))}
                           </div>
                         )}
-                        <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug mb-2 dark:text-white">{post.data.title}</h3>
+                        <h3 class="text-2xl font-semibold tracking-tight text-dark leading-snug mb-2 transition-colors group-hover:text-primary dark:text-white dark:group-hover:text-primary">{post.data.title}</h3>
                         <p class="text-base text-gray-600 dark:text-gray-300">{post.data.description}</p>
                     </a>
                     {(hasUiPreview || post.data.demo) && (
                         <div class="flex flex-wrap items-center gap-2 mt-2">
                             {hasUiPreview && (
-                                <a href={`/case-study/${post.slug}/ui`} class="inline-flex items-center gap-1.5 text-sm font-medium border border-dark bg-dark text-white px-4 py-2 rounded-full hover:bg-primary hover:border-primary transition-colors dark:border-white dark:bg-white dark:text-gray-900 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white">
+                                <a href={`/case-study/${post.slug}/ui`} class="motion-link inline-flex items-center gap-1.5 text-sm font-medium border border-dark bg-dark text-white px-4 py-2 rounded-full hover:bg-primary hover:border-primary dark:border-white dark:bg-white dark:text-gray-900 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white">
                                     UI展示
                                 </a>
                             )}
                             {post.data.demo && (
-                                <a href={post.data.demo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium border border-dark text-dark px-4 py-2 rounded-full hover:bg-dark hover:text-white transition-colors dark:border-gray-300 dark:text-gray-200 dark:hover:bg-white dark:hover:text-gray-900">
+                                <a href={post.data.demo} target="_blank" rel="noopener noreferrer" class="motion-link inline-flex items-center gap-1.5 text-sm font-medium border border-dark text-dark px-4 py-2 rounded-full hover:bg-dark hover:text-white dark:border-gray-300 dark:text-gray-200 dark:hover:bg-white dark:hover:text-gray-900">
                                     体验 Demo
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    <svg class="w-3.5 h-3.5 transition-transform group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                 </a>
                             )}
                         </div>

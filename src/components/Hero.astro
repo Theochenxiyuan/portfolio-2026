@@ -2,10 +2,27 @@
 import { site } from '../data/site';
 ---
 
-<section class="max-w-page mx-auto px-6 pt-32 pb-24 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-dark leading-[1.1] dark:text-white">
-        {site.hero.greeting}
-        <span class="text-primary">{site.hero.name}</span> 。<br>{site.hero.title}
+<section class="relative max-w-page mx-auto px-6 pt-32 pb-24 flex flex-col md:flex-row justify-between items-start md:items-center gap-12 overflow-hidden">
+    <div class="hero-orb absolute right-0 top-20 h-44 w-44 rounded-full bg-primary/10 blur-3xl dark:bg-primary/20" aria-hidden="true"></div>
+    <h1 class="relative text-5xl md:text-6xl font-bold tracking-tight text-dark leading-[1.1] dark:text-white">
+        <span data-reveal class="block" style="--reveal-delay: 60ms">{site.hero.greeting}</span>
+        <span data-reveal class="block" style="--reveal-delay: 160ms"><span class="text-primary">{site.hero.name}</span> 。</span>
+        <span data-reveal class="block" style="--reveal-delay: 260ms">{site.hero.title}</span>
     </h1>
 
 </section>
+
+<style>
+  .hero-orb {
+    animation: hero-orb 7s ease-in-out infinite;
+  }
+
+  @keyframes hero-orb {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(-28px, 18px, 0) scale(1.12);
+    }
+  }
+</style>

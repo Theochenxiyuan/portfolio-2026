@@ -3,7 +3,7 @@ import { site } from '../data/site';
 ---
 
 <section id="skills" class="max-w-page mx-auto px-6 py-16">
-  <div class="max-w-2xl mb-12">
+  <div data-reveal class="max-w-2xl mb-12">
     <h2 class="text-3xl font-semibold tracking-tight text-dark mb-4 dark:text-white">{site.skills.title}</h2>
     <p class="text-lg text-gray-600 leading-relaxed dark:text-gray-300">
       {site.skills.description}
@@ -11,12 +11,12 @@ import { site } from '../data/site';
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    {site.skills.categories.map((category) => (
-      <div class="bg-gray-50 rounded-xl p-6 dark:bg-gray-800">
+    {site.skills.categories.map((category, index) => (
+      <div data-reveal="scale" class="motion-card bg-gray-50 rounded-xl p-6 hover:shadow-xl hover:shadow-gray-900/5 dark:bg-gray-800 dark:hover:shadow-black/20" style={`--reveal-delay: ${index * 90}ms`}>
         <h3 class="text-base font-semibold text-dark mb-4 dark:text-white">{category.title}</h3>
         <div class="flex flex-wrap gap-2">
-          {category.skills.map((skill) => (
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white text-gray-700 border border-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">
+          {category.skills.map((skill, skillIndex) => (
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white text-gray-700 border border-gray-200 transition-transform duration-200 hover:-translate-y-0.5 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" style={`transition-delay: ${skillIndex * 10}ms`}>
               {skill}
             </span>
           ))}
