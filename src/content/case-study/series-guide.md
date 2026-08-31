@@ -4,6 +4,13 @@ description: '重新定义复杂影视/游戏系列的观看指南'
 year: 2026
 category: 'C端产品设计'
 featured: true
+tags:
+  - label: 信息架构
+    color: blue
+  - label: UGC
+    color: purple
+  - label: 原型验证
+    color: amber
 image: '/case-study/series-guide/logo.webp'
 demo: 'https://seriesguidedemo-amgov01ad.maozi.io/'
 uiShots:

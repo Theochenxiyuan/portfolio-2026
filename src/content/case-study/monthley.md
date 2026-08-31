@@ -4,6 +4,13 @@ description: '以“月”为节奏的个人兴趣追踪应用'
 year: 2025
 category: 'C端产品设计&开发'
 featured: true
+tags:
+  - label: 已上线
+    color: emerald
+  - label: 交互设计
+    color: blue
+  - label: 独立开发
+    color: purple
 image: '/case-study/monthley/logo.webp'
 demo: 'https://monthley.netlify.app/'
 github: 'https://github.com/Theochenxiyuan/monthley'

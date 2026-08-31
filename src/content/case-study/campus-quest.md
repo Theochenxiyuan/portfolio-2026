@@ -4,6 +4,13 @@ description: '从“导航工具”到“探索游戏”'
 year: 2024
 category: '概念设计&用户研究'
 featured: true
+tags:
+  - label: 用户研究
+    color: blue
+  - label: 游戏化
+    color: purple
+  - label: 原型测试
+    color: amber
 image: '/case-study/campus-quest/logo.webp'
 ---
 
