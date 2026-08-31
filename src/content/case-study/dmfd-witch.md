@@ -35,6 +35,11 @@ workshop: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3767806539'
 
 《Dragon Marked for Death》是一款横版动作 RPG。原作 Witch 的主要输出并不是按一下按钮立即施法，而是进入咏唱状态，输入不同按键序列，将元素、强化、追踪或凝聚等咒文暂存起来，最后再释放组合后的法术。
 
+<figure>
+  <img src="/case-study/dmfd-witch/original-witch-chanting.webp" alt="原作 Witch 进入咏唱状态并组合咒文的动图" />
+  <figcaption>原作 Witch 的咏唱机制：输入不同咒文逐步组合效果，再选择时机释放。</figcaption>
+</figure>
+
 这套系统有几个关键特征：
 
 - **施法需要准备。** 咏唱期间无法自由移动，输入和释放时机本身就是风险；
@@ -47,7 +52,7 @@ workshop: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3767806539'
 
 > **先准备法术，再组合属性，在风险与收益之间决定何时释放。**
 
-这也是我选择迁移的核心。原作机制参考了 [Dragon Marked for Death 官方介绍](https://dragonmfd.com/en/system/)、[官方版本说明](https://dragonmfd.com/en/product/) 与 [Witch 机制资料](https://dragonmarkedfordeath.wiki.gg/wiki/Witch)。
+这也是我选择迁移的核心。原作机制参考了 [Dragon Marked for Death 官方介绍](https://dragonmfd.com/en/system/) 与 [Witch Wiki](https://dragon-marked-for-death.fandom.com/zh/wiki/%E9%AD%94%E5%A5%B3)。
 
 ## 从实时输入到回合决策
 
