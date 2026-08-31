@@ -3,7 +3,7 @@ title: '小熊猫之家'
 description: '情感共鸣式科普应用'
 year: 2026
 category: '产品探索&用户研究'
-featured: true
+featured: false
 tags:
   - label: 早期探索
     color: blue

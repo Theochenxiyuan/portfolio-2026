@@ -4,6 +4,7 @@ description: '我在自用的 Pi 桌面 GUI 中加入快捷任务入口与任务
 year: 2026
 category: '产品设计&开发'
 featured: true
+image: '/case-study/pi-companion/logo.webp'
 tags:
   - label: AI Agent
     color: purple

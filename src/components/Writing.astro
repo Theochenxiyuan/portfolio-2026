@@ -5,7 +5,7 @@ import { site } from '../data/site';
 const posts = await getCollection('case-study');
 const sortedPosts = posts.sort((a, b) => b.data.year - a.data.year);
 const featuredPosts = sortedPosts
-  .filter(p => !p.data.tags?.some(t => t.label === '进行中'))
+  .filter(p => p.data.featured && !p.data.tags?.some(t => t.label === '进行中'))
   .slice(0, 3);
 
 const colors = [
