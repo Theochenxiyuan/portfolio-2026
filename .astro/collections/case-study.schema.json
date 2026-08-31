@@ -60,6 +60,9 @@
         "github": {
           "type": "string"
         },
+        "workshop": {
+          "type": "string"
+        },
         "uiShots": {
           "type": "array",
           "items": {

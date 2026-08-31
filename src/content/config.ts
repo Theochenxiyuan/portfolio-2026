@@ -22,6 +22,7 @@ const caseStudyCollection = defineCollection({
     image: z.string().optional(),
     demo: z.string().optional(),
     github: z.string().optional(),
+    workshop: z.string().optional(),
     uiShots: z
       .array(
         z.object({

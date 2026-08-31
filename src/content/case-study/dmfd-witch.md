@@ -12,6 +12,7 @@ tags:
   - label: AI 工作流
     color: blue
 image: '/case-study/dmfd-witch/cover.webp'
+workshop: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3767806539'
 ---
 
 我把《Dragon Marked for Death》中的 Witch 搬进了玩法完全不同的《Slay the Spire 2》。这个项目最重要的不是完成了多少张卡，而是解决了两个更难的问题：
@@ -25,7 +26,7 @@ image: '/case-study/dmfd-witch/cover.webp'
 | :--- | :--- |
 | **职责** | 系统转译、游戏设计、AI 开发工作流、C# / Godot 实现、测试与发布 |
 | **技术栈** | C# / .NET 9、Godot 4.5、Harmony、BaseLib、Python、PowerShell |
-| **交付状态** | 已发布至 Steam Workshop |
+| **交付状态** | [已发布至 Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3767806539) |
 | **实现规模** | 201 个 C# 文件、约 14,340 行 C#、106 个卡牌类 |
 
 > **说明：** DMFD Witch Mod 是非官方同人模组，与《Slay the Spire 2》《Dragon Marked for Death》的开发商及发行商不存在隶属或合作关系。相关原作名称与角色归其权利方所有。

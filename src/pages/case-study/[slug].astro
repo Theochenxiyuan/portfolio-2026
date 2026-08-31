@@ -51,7 +51,7 @@ const hasUiPreview = (post.data.uiShots?.length ?? 0) > 0;
                     {post.data.description}
                 </p>
             )}
-            {(hasUiPreview || post.data.demo || post.data.github) && (
+            {(hasUiPreview || post.data.demo || post.data.github || post.data.workshop) && (
                 <div data-reveal class="mt-8 flex flex-wrap items-center justify-center gap-3" style="--reveal-delay: 240ms">
                     {hasUiPreview && (
                         <a href={`/case-study/${post.slug}/ui`} class="motion-link inline-flex items-center gap-2 text-base font-medium border border-dark bg-dark text-white px-6 py-3 rounded-full hover:bg-primary hover:border-primary dark:border-white dark:bg-white dark:text-gray-900 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white">
@@ -68,6 +68,12 @@ const hasUiPreview = (post.data.uiShots?.length ?? 0) > 0;
                         <a href={post.data.github} target="_blank" rel="noopener noreferrer" class="motion-link inline-flex items-center gap-2 text-base font-medium border border-dark text-dark px-6 py-3 rounded-full hover:bg-dark hover:text-white dark:border-gray-300 dark:text-gray-200 dark:hover:bg-white dark:hover:text-gray-900">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                             GitHub
+                        </a>
+                    )}
+                    {post.data.workshop && (
+                        <a href={post.data.workshop} target="_blank" rel="noopener noreferrer" class="motion-link inline-flex items-center gap-2 text-base font-medium border border-dark text-dark px-6 py-3 rounded-full hover:bg-dark hover:text-white dark:border-gray-300 dark:text-gray-200 dark:hover:bg-white dark:hover:text-gray-900">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0a12 12 0 0 0-12 11.34l6.45 2.67a3.39 3.39 0 0 1 1.92-1.09l2.36-3.42v-.05a4.52 4.52 0 1 1 4.52 4.52h-.1l-3.37 2.4a3.4 3.4 0 0 1-6.72.71L.46 15.17A12 12 0 1 0 12 0Zm-4.72 18.9-1.48-.61a2.55 2.55 0 0 0 4.76-.6 2.56 2.56 0 0 0-1.48-2.94l-1.53-.63a1.87 1.87 0 1 1-.27 4.78Zm7.97-6.43a3.02 3.02 0 1 0 0-6.04 3.02 3.02 0 0 0 0 6.04Zm0-.75a2.27 2.27 0 1 1 0-4.54 2.27 2.27 0 0 1 0 4.54Z"/></svg>
+                            Steam 创意工坊
                         </a>
                     )}
                 </div>
