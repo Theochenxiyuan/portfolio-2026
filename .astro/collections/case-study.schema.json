@@ -20,6 +20,10 @@
           "type": "boolean",
           "default": false
         },
+        "hidden": {
+          "type": "boolean",
+          "default": false
+        },
         "tags": {
           "type": "array",
           "items": {

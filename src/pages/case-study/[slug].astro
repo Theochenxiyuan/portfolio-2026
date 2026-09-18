@@ -6,7 +6,7 @@ import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('case-study');
-  const sortedPosts = posts.sort((a, b) => b.data.year - a.data.year);
+  const sortedPosts = posts.filter((p) => !p.data.hidden).sort((a, b) => b.data.year - a.data.year);
   return sortedPosts.map((post, index) => ({
     params: { slug: post.slug },
     props: { post, index },

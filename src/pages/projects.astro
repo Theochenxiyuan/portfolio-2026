@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const posts = await getCollection('case-study');
-const sortedPosts = posts.sort((a, b) => b.data.year - a.data.year);
+const sortedPosts = posts.filter((p) => !p.data.hidden).sort((a, b) => b.data.year - a.data.year);
 
 const colors = [
   { bg: 'bg-indigo-50', text: 'text-indigo-700' },

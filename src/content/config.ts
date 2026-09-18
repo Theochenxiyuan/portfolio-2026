@@ -8,6 +8,7 @@ const caseStudyCollection = defineCollection({
     year: z.number(),
     category: z.string(),
     featured: z.boolean().default(false),
+    hidden: z.boolean().default(false),
     tags: z
       .array(
         z.object({
